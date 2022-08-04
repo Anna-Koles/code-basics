@@ -10,6 +10,9 @@
 const truncate = (text, length) => `${text.slice(0, length)}...`;
 
 
+
+
+
 // Реализуйте функцию getHiddenCard(), которая принимает на вход номер кредитки (состоящий из 16 цифр) 
 // в виде строки и возвращает его скрытую версию, которая может использоваться на сайте для отображения. 
 // Если исходная карта имела номер 2034399002125581, то скрытая версия выглядит так ****5581. 
@@ -26,9 +29,25 @@ const truncate = (text, length) => `${text.slice(0, length)}...`;
 const getHiddenCard = (num, stars = 4) => `${'*'.repeat(stars)}${num.slice(12)}`;
 
 
+
+
+
+
 // Реализуйте функцию capitalize(), которая принимает непустую строку и приводит первую букву первого слова
 //  к верхнему регистру:
 // const name = 'arya';
 // console.log(capitalize(name)); // => "Arya"
 
 const capitalize = (name) => `${name.slice(0, 1).toUpperCase()}${name.slice(1)}`;
+
+
+
+
+
+// Перевернуть цифры в числе: 79886 => 68897, -324234 => 432423
+
+const numReverse = (numbers) => {
+    numbers = Math.abs(numbers);    // откинуть минус, если есть, т.е. выделить модуль числа
+    numbers = +(numbers.toString().split("").reverse().join(''));
+    return numbers;
+}
