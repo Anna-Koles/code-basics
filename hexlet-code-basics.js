@@ -39,17 +39,7 @@ const capitalize = (name) => `${name.slice(0, 1).toUpperCase()}${name.slice(1)}`
 
 
 
-// Перевернуть цифры в числе: 79886 => 68897, -324234 => 432423
-
-const numReverse = (numbers) => {
-    numbers = Math.abs(numbers);    // откинуть минус, если есть, т.е. выделить модуль числа
-    numbers = +(numbers.toString().split("").reverse().join(''));
-    return numbers;
-}
-
-
-
-
 // Реализуйте функцию isPalindrome(), которая определяет, является ли слово палиндромом или нет. 
 const isPalindrome = (word) => word.toLowerCase() === word.toLowerCase().split("").reverse().join('');
-// если надо сравнить, что не является палиндромом, то просто поставить !==
+// reverse - метод массива, поэтому нужно сначала сделать строку массивом с помощью split, а потом обратно строкой join
+// если надо сравнить, что не является палиндромом, то просто поставить !== вместо ===
