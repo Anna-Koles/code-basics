@@ -1,0 +1,8 @@
+// Перевернуть цифры в числе: 79886 => 68897, -324234 => 432423
+
+const numReverse = (numbers) => {
+    numbers = Math.abs(numbers);    // откинуть минус, если есть, т.е. выделить модуль числа
+    // reverse - метод массива, поэтому нужно сначала сделать строку массивом с помощью split, а потом обратно строкой join
+    numbers = +(numbers.toString().split("").reverse().join(''));  
+    return numbers;
+}
